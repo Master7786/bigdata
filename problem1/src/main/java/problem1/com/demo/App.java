@@ -41,21 +41,21 @@ public class App
 	private static void loadSellerData(SparkSession sparkSession)
 	{
 		Dataset<Row> sellerDF = sparkSession.read().option("delimiter", "|").option("header", "true").option("inferSchema", "true")
-				   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\Sapient_Coding_Problem-20200214T091148Z-001\\Sapient_Coding_Problem\\dataset\\seller_data.txt");
+				   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\dataset\\seller_data.txt");
 		sellerDF.createOrReplaceTempView("seller");
 	}
 
 	private static void loadCompetitorData(SparkSession sparkSession)
 	{
 		Dataset<Row> competitorDF = sparkSession.read().option("delimiter", "|").option("header", "true").option("inferSchema", "true")
-				   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\Sapient_Coding_Problem-20200214T091148Z-001\\Sapient_Coding_Problem\\dataset\\Competitor_data.txt");
+				   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\dataset\\Competitor_data.txt");
 		competitorDF.createOrReplaceTempView("competitor");
 	}
 
 	private static void loadProductData(SparkSession sparkSession)
 	{
 		Dataset<Row> productDF = sparkSession.read().option("delimiter", "|").option("header", "true").option("inferSchema", "true")
-		   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\Sapient_Coding_Problem-20200214T091148Z-001\\Sapient_Coding_Problem\\dataset\\internal_product_data.txt");
+		   .csv("C:\\Users\\mohammad.abdullah\\Downloads\\dataset\\internal_product_data.txt");
 		productDF.createOrReplaceTempView("product");
 	}
 }
